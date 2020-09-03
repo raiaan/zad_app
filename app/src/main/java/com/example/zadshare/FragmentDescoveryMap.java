@@ -3,6 +3,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -148,8 +149,8 @@ public class FragmentDescoveryMap extends Fragment implements Callback<ArrayList
 
         View view ;
         ArrayList<Item> detail;
-        ImageView logo;
-        TextView placename, address,rattingTxt;
+        ImageView logo,delivery;
+        TextView placename, address,rattingTxt,typeService;
         RatingBar ratingBar;
         MyCustomAdapterForItems(View view,ArrayList<Item> detail) {
             this.view = view;
@@ -171,10 +172,12 @@ public class FragmentDescoveryMap extends Fragment implements Callback<ArrayList
             if(view !=null){
                 Item item= filterData(marker.getTitle());
                 logo=(ImageView) view.findViewById(R.id.logo_place_detail);
+                delivery=(ImageView) view.findViewById(R.id.delivery_checkbox);
                 placename = (TextView) view.findViewById(R.id.name_place_detail);
                 address= (TextView)view.findViewById(R.id.location_place_detail);
                 rattingTxt = (TextView)view.findViewById(R.id.rating_txt_place_detail);
                 ratingBar =(RatingBar) view.findViewById(R.id.ratingBar);
+                typeService=(TextView)view.findViewById(R.id.type_place_detail);
                 if(item!=null){
                     Glide.with(getContext().getApplicationContext())
                             .load("https://zadshareapp.com/zadvisitorsapi/picupload/member/"+item.getRestaurantlogourl())
@@ -188,6 +191,7 @@ public class FragmentDescoveryMap extends Fragment implements Callback<ArrayList
                     address.setText(item.getRestaurantaddres());
                     rattingTxt.setText(item.getRatting());
                     ratingBar.setRating(Float.parseFloat(item.getRatting()));
+                    delivery.setColorFilter(getContext().getResources().getColor(R.color.tabs_text_color), PorterDuff.Mode.SRC_IN);
 
                 }
 

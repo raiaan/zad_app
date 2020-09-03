@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="@dimen/activity_padding"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/map_window_info_margin_left"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <ImageView
         android:layout_width="75dp"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:text="PIZZA HUT"
         android:textSize="@dimen/normal_text_size"
-        android:layout_marginLeft="@dimen/marker_padding"
+        android:layout_marginLeft="@dimen/map_window_info_margin_left"
         android:textColor="@android:color/black"
         style="bold"/>
     <TextView
@@ -34,7 +34,7 @@
         app:layout_constraintLeft_toRightOf="@id/logo_place_detail"
         app:layout_constraintTop_toBottomOf="@id/name_place_detail"
         android:text="Restaurant"
-        android:layout_marginLeft="@dimen/marker_padding"
+        android:layout_marginLeft="@dimen/map_window_info_margin_left"
         android:textSize="@dimen/normal_text_size"
         android:textColor="@color/green"/>
 
@@ -47,14 +47,14 @@
         android:rating="4"
         android:theme="@style/RatingBar"
         style="?android:attr/ratingBarStyleIndicator"
-        android:layout_marginLeft="@dimen/marker_padding"
+        android:layout_marginLeft="@dimen/map_window_info_margin_left"
         android:max="5"
-        android:scaleX=".98"
-        android:scaleY=".98"/>
+        android:scaleX=".9"
+        android:scaleY=".9"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="3dp"
+        android:padding="2dp"
         android:id="@+id/rating_txt_place_detail"
         app:layout_constraintLeft_toRightOf="@id/ratingBar"
         app:layout_constraintTop_toBottomOf="@id/type_place_detail"
@@ -71,7 +71,7 @@
         android:textSize="@dimen/normal_text_size"
         app:layout_constraintLeft_toRightOf="@id/logo_place_detail"
         app:layout_constraintTop_toBottomOf="@id/ratingBar"
-        android:layout_marginLeft="2dp"
+        android:layout_marginLeft="@dimen/map_window_info_margin_left"
         />
     <ImageView
         android:layout_width="16dp"
@@ -88,8 +88,8 @@
         android:text="East 46th Street, Dubai"
         android:textColor="@color/page_title"
         android:textSize="@dimen/normal_text_size"
-        android:layout_marginLeft="2dp"
+        android:layout_marginLeft="@dimen/map_window_info_margin_left"
         app:layout_constraintLeft_toRightOf="@id/logo_place_detail"
-        app:layout_constraintTop_toBottomOf="@id/delivery_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/delivery"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

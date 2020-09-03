@@ -7,7 +7,7 @@ public class Item {
     String restaurantlat;
     String restaurantlng;
     String restaurantservicetype;
-    String restaurantaddres;
+    String restaurantaddress;
     String restaurantmob;
     String ratting;
     String favorittring;
@@ -25,7 +25,7 @@ public class Item {
         this.restaurantlat = restaurantlat;
         this.restaurantlng = restaurantlng;
         this.restaurantservicetype = restaurantservicetype;
-        this.restaurantaddres = restaurantaddres;
+        this.restaurantaddress = restaurantaddres;
         this.restaurantmob = restaurantmob;
         this.ratting = ratting;
         this.favorittring = favorittring;
@@ -84,11 +84,11 @@ public class Item {
     }
 
     public String getRestaurantaddres() {
-        return restaurantaddres;
+        return restaurantaddress;
     }
 
     public void setRestaurantaddres(String restaurantaddres) {
-        this.restaurantaddres = restaurantaddres;
+        this.restaurantaddress = restaurantaddres;
     }
 
     public String getRestaurantmob() {
