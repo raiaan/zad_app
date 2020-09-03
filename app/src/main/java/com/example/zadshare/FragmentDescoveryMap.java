@@ -3,6 +3,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,8 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.example.zadshare.models.Item;
 import com.example.zadshare.retrofit_interface.APIInterface;
 import com.example.zadshare.retrofit_interface.ApiClient;
@@ -172,10 +175,15 @@ public class FragmentDescoveryMap extends Fragment implements Callback<ArrayList
                 address= (TextView)view.findViewById(R.id.location_place_detail);
                 rattingTxt = (TextView)view.findViewById(R.id.rating_txt_place_detail);
                 ratingBar =(RatingBar) view.findViewById(R.id.ratingBar);
-                logo.setImageDrawable(getContext().getResources().getDrawable(R.drawable.log_demo));
                 if(item!=null){
                     Glide.with(getContext().getApplicationContext())
-                            .load("https://zadshareapp.com/zadvisitorsapi/picupload/member/"+item.getRestaurantlogourl()).into(logo);
+                            .load("https://zadshareapp.com/zadvisitorsapi/picupload/member/"+item.getRestaurantlogourl())
+                            .into(new SimpleTarget<Drawable>() {
+                                @Override
+                                public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                                    logo.setImageDrawable(resource);
+                                }
+                            });
                     placename.setText(item.getRestaurantname());
                     address.setText(item.getRestaurantaddres());
                     rattingTxt.setText(item.getRatting());
