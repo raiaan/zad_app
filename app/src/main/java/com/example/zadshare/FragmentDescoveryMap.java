@@ -191,7 +191,9 @@ public class FragmentDescoveryMap extends Fragment implements Callback<ArrayList
                     address.setText(item.getRestaurantaddres());
                     rattingTxt.setText(item.getRatting());
                     ratingBar.setRating(Float.parseFloat(item.getRatting()));
-                    delivery.setColorFilter(getContext().getResources().getColor(R.color.tabs_text_color), PorterDuff.Mode.SRC_IN);
+                    if(Integer.parseInt(item.getRestaurantdelivery())==1){
+                        delivery.setColorFilter(getContext().getResources().getColor(R.color.tabs_text_color), PorterDuff.Mode.SRC_IN);
+                    }
 
                 }
 
