@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="green">#049c83</color>
+    <color name="inactive_dots">#b3e2da</color>
+    <color name="white">#fff</color>
+    <color name="grey">#f1f3f2</color>
+    <color name="tabs_text_color">#bbbbbb</color>
+    <color name="page_title">#9D9D9D</color>
+    <color name="golden">#f1bb3a</color>
+</resources>
